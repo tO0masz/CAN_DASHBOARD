@@ -12,6 +12,7 @@
 		[
 			"add_executable",
 			"target_link_libraries",
+			"target_include_directories",
 			"target_sources"
 		],
 		"files" : 
@@ -41,6 +42,12 @@
 			},
 			{
 				"command" : 2,
+				"file" : 0,
+				"line" : 54,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
 				"file" : 1,
 				"line" : 75,
 				"parent" : 2
@@ -53,7 +60,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11"
+					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -std=gnu11"
 				}
 			],
 			"defines" : 
@@ -73,6 +80,10 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/tomas/OneDrive/Pulpit/stm32/CAN_DASHBOARD/Drivers/ili9341_lcd_driver"
+				},
 				{
 					"backtrace" : 3,
 					"path" : "C:/Users/tomas/OneDrive/Pulpit/stm32/CAN_DASHBOARD/Core/Inc"
@@ -116,7 +127,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -x assembler-with-cpp -MMD -MP -g"
+					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -x assembler-with-cpp -MMD -MP -g"
 				}
 			],
 			"defines" : 
@@ -136,6 +147,10 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/tomas/OneDrive/Pulpit/stm32/CAN_DASHBOARD/Drivers/ili9341_lcd_driver"
+				},
 				{
 					"backtrace" : 3,
 					"path" : "C:/Users/tomas/OneDrive/Pulpit/stm32/CAN_DASHBOARD/Core/Inc"
@@ -177,7 +192,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3",
+				"fragment" : "-mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3",
 				"role" : "flags"
 			},
 			{
@@ -240,37 +255,37 @@
 	"sources" : 
 	[
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/main.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/stm32f4xx_it.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/stm32f4xx_hal_msp.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/sysmem.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/syscalls.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"compileGroupIndex" : 1,
 			"path" : "startup_stm32f446xx.s",
 			"sourceGroupIndex" : 1
