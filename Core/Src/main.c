@@ -110,6 +110,7 @@ int main(void)
       rpm = 0;
     }
     draw_rpm(rpm);
+    draw_rpm_max_line(rpm);
     rpm+=1000;
     /* USER CODE END WHILE */
 

@@ -1,6 +1,6 @@
 #include <stdint.h>
 
-#define MAX_RPM 10000
+#define MAX_RPM 99999
 
 void init_lcd();
 
