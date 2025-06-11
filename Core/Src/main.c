@@ -44,9 +44,9 @@ SPI_HandleTypeDef hspi2;
 
 UART_HandleTypeDef huart2;
 
-uint64_t rpm = 0;
+volatile uint64_t rpm = 0;
 
-uint8_t uartData;
+uint8_t uartData[5];
 
 
 
@@ -101,7 +101,7 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_UART_Receive_IT(&huart2, &uartData, 1);
+  HAL_UART_Receive_IT(&huart2, uartData, 5);
 
   init_lcd();
   draw_static_components();
@@ -291,17 +291,20 @@ static void MX_GPIO_Init(void)
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
   if(huart->Instance == USART2){
     // Transmission complete callback for USART2
-    if(uartData == 'a'){
+    if(uartData[0] == 'a'){
       if(rpm < 99999){
         rpm+=1000;
       }
     }
-    else if(uartData == 's'){
+    else if(uartData[0] == 's'){
       if(rpm > 0){
         rpm-=1000;
       }
     }
-    HAL_UART_Receive_IT(&huart2, &uartData, 1);
+    else{
+      strToInt(uartData, 5, &rpm);
+    }
+    HAL_UART_Receive_IT(&huart2, uartData, 5);
   }
 }
 

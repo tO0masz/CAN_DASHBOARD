@@ -5,6 +5,19 @@ void intToStr(uint64_t num, char *buffer) {
     sprintf(buffer, "%u", num);
 }
 
+void strToInt(const char *str, uint16_t strLen, uint64_t *num) {
+    *num = 0;
+    for(uint8_t i = 0; i < strLen; i++) {
+        if(str[i] >= '0' && str[i] <= '9') {
+            *num = *num * 10 + (str[i] - '0');
+        } else {
+            // Handle invalid character
+            *num = 0;
+            return;
+        }
+    }
+}
+
 // Function to shift characters in a string to the right 
 void shift_right(char *str, uint8_t shift_by, int buffer_size) {
     size_t len = strlen(str);
