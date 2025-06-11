@@ -44,6 +44,12 @@ SPI_HandleTypeDef hspi2;
 
 UART_HandleTypeDef huart2;
 
+uint64_t rpm = 0;
+
+uint8_t uartData;
+
+
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -95,10 +101,10 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
+  HAL_UART_Receive_IT(&huart2, &uartData, 1);
+
   init_lcd();
   draw_static_components();
-  uint64_t rpm = 0;
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -106,12 +112,13 @@ int main(void)
   while (1)
   {
     HAL_Delay(80);
-    if(rpm>99999){
-      rpm = 0;
-    }
+    // if(rpm>99999){
+    //   rpm = 0;
+    // }
     draw_rpm(rpm);
     draw_rpm_max_line(rpm);
-    rpm+=1000;
+    //HAL_UART_Transmit_IT(&huart2, &uartData, 1);
+    //rpm+=1000;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -280,6 +287,23 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+  if(huart->Instance == USART2){
+    // Transmission complete callback for USART2
+    if(uartData == 'a'){
+      if(rpm < 99999){
+        rpm+=1000;
+      }
+    }
+    else if(uartData == 's'){
+      if(rpm > 0){
+        rpm-=1000;
+      }
+    }
+    HAL_UART_Receive_IT(&huart2, &uartData, 1);
+  }
+}
 
 /* USER CODE END 4 */
 
