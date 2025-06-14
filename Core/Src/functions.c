@@ -22,11 +22,6 @@ void strToInt(const char *str, uint16_t strLen, uint64_t *num) {
 void shift_right(char *str, uint8_t shift_by, int buffer_size) {
     size_t len = strlen(str);
 
-    // Protection against buffer overflow
-    if (len + shift_by >= buffer_size) {
-        shift_by = buffer_size - len - 1; // leave place for '\0'
-    }
-
     // Shift characters from the end to avoid overwriting data
     for (int i = len; i >= 0; i--) {
         str[i + shift_by] = str[i];

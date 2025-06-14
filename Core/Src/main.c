@@ -46,7 +46,7 @@ UART_HandleTypeDef huart2;
 
 volatile uint64_t rpm = 0;
 
-uint8_t uartData[5];
+uint8_t uartData[4];
 
 
 
@@ -101,7 +101,7 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_UART_Receive_IT(&huart2, uartData, 5);
+  HAL_UART_Receive_IT(&huart2, uartData, 4);
 
   init_lcd();
   draw_static_components();
@@ -302,9 +302,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
       }
     }
     else{
-      strToInt(uartData, 5, &rpm);
+      strToInt(uartData, 4, &rpm);
     }
-    HAL_UART_Receive_IT(&huart2, uartData, 5);
+    HAL_UART_Receive_IT(&huart2, uartData, 4);
   }
 }
 

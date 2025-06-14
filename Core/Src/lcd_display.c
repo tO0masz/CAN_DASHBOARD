@@ -42,8 +42,9 @@ void draw_rpm_max_line(uint64_t rpm){
 void draw_rpm(uint64_t rpm) {
     char rpm_str[6];
     intToStr(rpm, rpm_str);
-    if(rpm < 10000){
-        shift_right(rpm_str, 6 - strlen(rpm_str), 6);
+    // Max rpm is 9999, so we need to ensure the string is 4 characters long
+    if(rpm < 1000){
+        shift_right(rpm_str, 4 - strlen(rpm_str), 4);
     }
     ILI9341_WriteString(ILI9341_WIDTH/6, ILI9341_HEIGHT/3, rpm_str, Font_16x26, ILI9341_WHITE, ILI9341_BLACK);
 }
