@@ -291,19 +291,7 @@ static void MX_GPIO_Init(void)
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
   if(huart->Instance == USART2){
     // Transmission complete callback for USART2
-    if(uartData[0] == 'a'){
-      if(rpm < 99999){
-        rpm+=1000;
-      }
-    }
-    else if(uartData[0] == 's'){
-      if(rpm > 0){
-        rpm-=1000;
-      }
-    }
-    else{
-      strToInt(uartData, 4, &rpm);
-    }
+    strToInt(uartData, 4, &rpm);
     HAL_UART_Receive_IT(&huart2, uartData, 4);
   }
 }
