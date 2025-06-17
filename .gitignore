@@ -1,17 +1,39 @@
-# Build folders
-/build/
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-build.ninja
-compile_commands.json
+# === BUILD SYSTEM ===
+build/                  # CMake build directory
+CMakeFiles/             # CMake internal files
+CMakeCache.txt          # CMake cache
+cmake_install.cmake     # CMake install script
+build.ninja             # Ninja build file
+compile_commands.json   # Compilation database (optional)
 
-# IDE settings
-.vscode/
+# === OUTPUT BINARIES ===
+*.elf                   # Executable file
+*.bin                   # Binary firmware
+*.hex                   # Intel HEX format
+*.map                   # Memory map file
+*.log                   # Build or debug logs
 
-# STM32CubeIDE specific (opcjonalnie ignoruj te pliki)
-*.launch
-*.log
-*.elf
-*.bin
-*.hex
+# === IDE SETTINGS ===
+.vscode/                # VSCode project settings
+
+# === STM32CubeIDE / STM32CubeMX FILES ===
+*.launch                # Launch configurations
+*.ioc~                  # Temporary CubeMX files
+*.backup                # CubeMX backup files
+*.dep                   # Dependency files
+*.project               # Eclipse project file
+*.cproject              # Eclipse C project settings
+
+# === TEMPORARY & OBJECT FILES ===
+*.swp                   # Vim swap files
+*.swo                   # SWO trace output
+*.svd                   # CMSIS system view files
+*.d                     # Dependency files
+*.o                     # Object files
+*.a                     # Static libraries
+*.out                   # Output files
+*.lst                   # Assembly listings
+
+# === OS / SYSTEM FILES ===
+.DS_Store               # macOS file browser metadata
+Thumbs.db               # Windows thumbnail cache
