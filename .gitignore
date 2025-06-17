@@ -1,0 +1,17 @@
+# Build folders
+/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+build.ninja
+compile_commands.json
+
+# IDE settings
+.vscode/
+
+# STM32CubeIDE specific (opcjonalnie ignoruj te pliki)
+*.launch
+*.log
+*.elf
+*.bin
+*.hex
